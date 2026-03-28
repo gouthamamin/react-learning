@@ -5,7 +5,8 @@ const Counter = () => {
 
   const handleIncrement = () => {
     // setCount(count + 1);
-    setCount((prev) => prev + 1);
+    setCount((prev) => prev + 1); //prev count = 0 gives me 1
+    setCount((prev) => prev + 1); // prev count = 1 gives me 2
   };
 
   const handleDecrement = () => {
