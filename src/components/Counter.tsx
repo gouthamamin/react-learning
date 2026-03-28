@@ -14,11 +14,13 @@ const Counter = () => {
     setCount((prev) => prev - 1);
   }
   return (
-    <div>
-      <span> Counter value : {count} </span>
+    <div className="w-full flex flex-col items-center gap-4">
+      <span className="text-lg font-bold"> Counter value : {count} </span>
       <div className="flex gap-4">
-        <button onClick={handleIncrement}>Increment</button>
-        <button onClick={handleDecrement}>Decrement</button>
+        <button className="px-4 py-2 border-2 border-solid rounded-md bg-green-400 text-white cursor-pointer"
+          onClick={handleIncrement}>Increment</button>
+        <button className="px-4 py-2 border-2 border-solid rounded-md bg-red-500 text-white cursor-pointer"
+          onClick={handleDecrement}>Decrement</button>
       </div>
     </div>
   );
