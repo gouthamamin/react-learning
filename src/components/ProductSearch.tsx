@@ -1,4 +1,4 @@
-import { useMemo, useState, type ChangeEvent } from "react"
+import { useCallback, useMemo, useState, type ChangeEvent } from "react"
 import SearchBar from "./Searchbar";
 
 
@@ -8,10 +8,10 @@ const ProductSearch = () => {
   const fixedPrice = 100;
   console.log("Parent : Product page rendered");
 
-  const handleSearch = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleSearch = useCallback((e: ChangeEvent<HTMLInputElement>) => {
     console.log("Handle search function called:", e.target.value);
     setSearchItem(e.target.value);
-  };
+  }, []);
 
   const totalPrize = useMemo(() => {
     return quantity * fixedPrice;
